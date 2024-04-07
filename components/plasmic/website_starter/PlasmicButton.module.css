@@ -2,7 +2,7 @@
   display: flex;
   position: relative;
   flex-direction: row;
-  background: #232320;
+  background: #f5f5f52e;
   cursor: pointer;
   transition-property: background;
   transition-duration: 0.1s;
@@ -10,7 +10,7 @@
   -webkit-transition-duration: 0.1s;
   border-radius: 6px;
   padding: 12px 20px;
-  border-width: 0px;
+  border: 0px solid #eddbdb;
 }
 .root > :global(.__wab_flex-container) {
   flex-direction: row;
@@ -277,7 +277,7 @@
   color: #ffffff;
 }
 .slotTargetChildrencolor_white {
-  color: #1b1b18;
+  color: #171715;
 }
 .slotTargetChildrencolor_softBlue {
   color: #006adc;

@@ -60,11 +60,17 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { NavigationBar } from "@plasmicpkgs/plasmic-nav";
+import Button from "../../Button"; // plasmic-import: j5o5xPWcHXxc/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
+import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
+import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: tCfLmaaHRZLhqCMNBDT3fx/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: 5h393F7B23DL/css
+
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: 3ii2Ka38u59S/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: VUB87-ym8GeH/icon
 
 createPlasmicElementProxy;
 
@@ -80,7 +86,10 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
   navigationBar?: Flex__<typeof NavigationBar>;
-  text?: Flex__<"div">;
+  button?: Flex__<typeof Button>;
+  addvertisementSection?: Flex__<"div">;
+  advertisement?: Flex__<"div">;
+  freeBox?: Flex__<"div">;
 };
 
 export interface DefaultHomepageProps {}
@@ -138,6 +147,8 @@ function PlasmicHomepage__RenderFunc(props: {
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
+            plasmic_antd_5_hostless_css.plasmic_tokens,
+            plasmic_plasmic_rich_components_css.plasmic_tokens,
             sty.root
           )}
         >
@@ -158,13 +169,18 @@ function PlasmicHomepage__RenderFunc(props: {
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__juf9M)}
-                  displayHeight={"40px"}
+                  displayHeight={"50px"}
                   displayMaxHeight={"none"}
                   displayMaxWidth={"none"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
                   displayWidth={"auto"}
-                  src={"https://static1.plasmic.app/nav-logo-placeholder.svg"}
+                  src={{
+                    src: "/plasmic/website_starter/images/screenshot20240407120359Png.png",
+                    fullWidth: 492,
+                    fullHeight: 158,
+                    aspectRatio: undefined
+                  }}
                 />
               </PlasmicLink__>
             }
@@ -182,6 +198,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 src={"https://static1.plasmic.app/close.svg"}
               />
             }
+            forceOpenMenu={false}
             itemsGap={8}
             menuItems={
               <React.Fragment>
@@ -203,13 +220,117 @@ function PlasmicHomepage__RenderFunc(props: {
                     projectcss.all,
                     projectcss.a,
                     projectcss.__wab_text,
+                    sty.link__cg7Af
+                  )}
+                  component={Link}
+                  href={"/"}
+                  platform={"nextjs"}
+                >
+                  {"Tribune"}
+                </PlasmicLink__>
+                <PlasmicLink__
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__t1Npl
+                  )}
+                  component={Link}
+                  href={"/"}
+                  platform={"nextjs"}
+                >
+                  {"Rates"}
+                </PlasmicLink__>
+                <PlasmicLink__
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__y2TG2
+                  )}
+                  component={Link}
+                  href={"/"}
+                  platform={"nextjs"}
+                >
+                  {"Soccer"}
+                </PlasmicLink__>
+                <PlasmicLink__
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__ffOUw
+                  )}
+                  component={Link}
+                  href={"/"}
+                  platform={"nextjs"}
+                >
+                  {"Figurine"}
+                </PlasmicLink__>
+                <PlasmicLink__
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__bT24O
+                  )}
+                  component={Link}
+                  href={"/"}
+                  platform={"nextjs"}
+                >
+                  {"Hockey"}
+                </PlasmicLink__>
+                <PlasmicLink__
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__xSbuA
+                  )}
+                  component={Link}
+                  href={"/"}
+                  platform={"nextjs"}
+                >
+                  {"Basket"}
+                </PlasmicLink__>
+                <PlasmicLink__
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link___09Ise
+                  )}
+                  component={Link}
+                  href={"/"}
+                  platform={"nextjs"}
+                >
+                  {"Tennis"}
+                </PlasmicLink__>
+                <PlasmicLink__
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__jjfNc
+                  )}
+                  component={Link}
+                  href={"/"}
+                  platform={"nextjs"}
+                >
+                  {"Boxing"}
+                </PlasmicLink__>
+                <PlasmicLink__
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
                     sty.link__eRr6A
                   )}
                   component={Link}
                   href={"/"}
                   platform={"nextjs"}
                 >
-                  {"About"}
+                  {"Auto"}
                 </PlasmicLink__>
                 <PlasmicLink__
                   className={classNames(
@@ -222,7 +343,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   href={"/"}
                   platform={"nextjs"}
                 >
-                  {"Contact"}
+                  {"Skying"}
                 </PlasmicLink__>
               </React.Fragment>
             }
@@ -242,17 +363,114 @@ function PlasmicHomepage__RenderFunc(props: {
             responsiveBreakpoint={768}
           />
 
+          <Button
+            data-plasmic-name={"button"}
+            data-plasmic-override={overrides.button}
+            children={null}
+            className={classNames("__wab_instance", sty.button)}
+          />
+
           <div
-            data-plasmic-name={"text"}
-            data-plasmic-override={overrides.text}
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text
-            )}
+            data-plasmic-name={"addvertisementSection"}
+            data-plasmic-override={overrides.addvertisementSection}
+            className={classNames(projectcss.all, sty.addvertisementSection)}
           >
-            {"Enter some text"}
+            <Stack__
+              as={"div"}
+              data-plasmic-name={"advertisement"}
+              data-plasmic-override={overrides.advertisement}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.advertisement)}
+            >
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.column__tnWm)}
+              >
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__vPrd)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={
+                    "https://avatars.mds.yandex.net/get-direct/4969662/atSTCY6D3ztHy6JHaDdvIQ/x450"
+                  }
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__nnB1T
+                  )}
+                >
+                  {"Free design courses all free on 14 days\n"}
+                </div>
+              </Stack__>
+              <div className={classNames(projectcss.all, sty.column__ja5Cd)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__wN3Ym)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={
+                    "https://avatars.mds.yandex.net/get-direct/5223389/Rgh5dDelcte3FYC6EUMVAQ/x450"
+                  }
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__fjCqZ
+                  )}
+                >
+                  {"Enter some text"}
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.column___4Kde3)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__oKEq1)}
+                  displayHeight={"60.78%"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"95%"}
+                  displayMinWidth={"0"}
+                  displayWidth={"361px"}
+                  loading={"lazy"}
+                  src={
+                    "https://avatars.mds.yandex.net/get-direct/169435/1udPZoXGtZbrRrj20aaSyw/wy300"
+                  }
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__dcTuO
+                  )}
+                >
+                  {"Enter some text"}
+                </div>
+              </div>
+            </Stack__>
           </div>
+          <div
+            data-plasmic-name={"freeBox"}
+            data-plasmic-override={overrides.freeBox}
+            className={classNames(projectcss.all, sty.freeBox)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -260,9 +478,19 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "navigationBar", "text"],
+  root: [
+    "root",
+    "navigationBar",
+    "button",
+    "addvertisementSection",
+    "advertisement",
+    "freeBox"
+  ],
   navigationBar: ["navigationBar"],
-  text: ["text"]
+  button: ["button"],
+  addvertisementSection: ["addvertisementSection", "advertisement"],
+  advertisement: ["advertisement"],
+  freeBox: ["freeBox"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -270,7 +498,10 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   navigationBar: typeof NavigationBar;
-  text: "div";
+  button: typeof Button;
+  addvertisementSection: "div";
+  advertisement: "div";
+  freeBox: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -334,7 +565,10 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     navigationBar: makeNodeComponent("navigationBar"),
-    text: makeNodeComponent("text"),
+    button: makeNodeComponent("button"),
+    addvertisementSection: makeNodeComponent("addvertisementSection"),
+    advertisement: makeNodeComponent("advertisement"),
+    freeBox: makeNodeComponent("freeBox"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

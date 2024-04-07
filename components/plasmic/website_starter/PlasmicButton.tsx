@@ -63,6 +63,8 @@ import * as pp from "@plasmicapp/react-web";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
+import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
+import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: tCfLmaaHRZLhqCMNBDT3fx/projectcss
 import sty from "./PlasmicButton.module.css"; // plasmic-import: j5o5xPWcHXxc/css
 
@@ -91,6 +93,7 @@ export type PlasmicButton__VariantMembers = {
     | "softSand"
     | "clear"
     | "link";
+  unnamedVariant: "unnamedVariant";
 };
 export type PlasmicButton__VariantsArgs = {
   showStartIcon?: SingleBooleanChoiceArg<"showStartIcon">;
@@ -113,6 +116,7 @@ export type PlasmicButton__VariantsArgs = {
     | "clear"
     | "link"
   >;
+  unnamedVariant?: SingleBooleanChoiceArg<"unnamedVariant">;
 };
 type VariantPropType = keyof PlasmicButton__VariantsArgs;
 export const PlasmicButton__VariantProps = new Array<VariantPropType>(
@@ -121,7 +125,8 @@ export const PlasmicButton__VariantProps = new Array<VariantPropType>(
   "isDisabled",
   "shape",
   "size",
-  "color"
+  "color",
+  "unnamedVariant"
 );
 
 export type PlasmicButton__ArgsType = {
@@ -169,6 +174,7 @@ export interface DefaultButtonProps extends pp.BaseButtonProps {
     | "clear"
     | "link"
   >;
+  unnamedVariant?: SingleBooleanChoiceArg<"unnamedVariant">;
 }
 
 const $$ = {};
@@ -239,6 +245,12 @@ function PlasmicButton__RenderFunc(props: {
         type: "private",
         variableType: "variant",
         initFunc: ({ $props, $state, $queries, $ctx }) => $props.color
+      },
+      {
+        path: "unnamedVariant",
+        type: "private",
+        variableType: "variant",
+        initFunc: ({ $props, $state, $queries, $ctx }) => $props.unnamedVariant
       }
     ],
     [$props, $ctx, $refs]
@@ -273,6 +285,8 @@ function PlasmicButton__RenderFunc(props: {
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
         projectcss.plasmic_tokens,
+        plasmic_antd_5_hostless_css.plasmic_tokens,
+        plasmic_plasmic_rich_components_css.plasmic_tokens,
         sty.root,
         {
           [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,
