@@ -92,7 +92,8 @@ export type PlasmicButton__VariantMembers = {
     | "softRed"
     | "softSand"
     | "clear"
-    | "link";
+    | "link"
+    | "unnamedVariant";
   unnamedVariant: "unnamedVariant";
 };
 export type PlasmicButton__VariantsArgs = {
@@ -115,6 +116,7 @@ export type PlasmicButton__VariantsArgs = {
     | "softSand"
     | "clear"
     | "link"
+    | "unnamedVariant"
   >;
   unnamedVariant?: SingleBooleanChoiceArg<"unnamedVariant">;
 };
@@ -148,7 +150,7 @@ export const PlasmicButton__ArgProps = new Array<ArgPropType>(
 );
 
 export type PlasmicButton__OverridesType = {
-  root?: Flex__<"button">;
+  login?: Flex__<"button">;
   startIconContainer?: Flex__<"div">;
   contentContainer?: Flex__<"div">;
   endIconContainer?: Flex__<"div">;
@@ -173,6 +175,7 @@ export interface DefaultButtonProps extends pp.BaseButtonProps {
     | "softSand"
     | "clear"
     | "link"
+    | "unnamedVariant"
   >;
   unnamedVariant?: SingleBooleanChoiceArg<"unnamedVariant">;
 }
@@ -262,19 +265,19 @@ function PlasmicButton__RenderFunc(props: {
     $refs
   });
 
-  const [isRootFocusVisibleWithin, triggerRootFocusVisibleWithinProps] =
+  const [isLoginFocusVisibleWithin, triggerLoginFocusVisibleWithinProps] =
     useTrigger("useFocusVisibleWithin", {
       isTextInput: false
     });
   const triggers = {
-    focusVisibleWithin_root: isRootFocusVisibleWithin
+    focusVisibleWithin_login: isLoginFocusVisibleWithin
   };
 
   return (
     <Stack__
       as={"button"}
-      data-plasmic-name={"root"}
-      data-plasmic-override={overrides.root}
+      data-plasmic-name={"login"}
+      data-plasmic-override={overrides.login}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       hasGap={true}
@@ -287,66 +290,102 @@ function PlasmicButton__RenderFunc(props: {
         projectcss.plasmic_tokens,
         plasmic_antd_5_hostless_css.plasmic_tokens,
         plasmic_plasmic_rich_components_css.plasmic_tokens,
-        sty.root,
+        sty.login,
         {
-          [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,
-          [sty.rootcolor_blue]: hasVariant($state, "color", "blue"),
-          [sty.rootcolor_clear]: hasVariant($state, "color", "clear"),
-          [sty.rootcolor_green]: hasVariant($state, "color", "green"),
-          [sty.rootcolor_link]: hasVariant($state, "color", "link"),
-          [sty.rootcolor_link_size_minimal]:
+          [sty.login___focusVisibleWithin]: triggers.focusVisibleWithin_login,
+          [sty.logincolor_blue]: hasVariant($state, "color", "blue"),
+          [sty.logincolor_blue_size_minimal]:
+            hasVariant($state, "color", "blue") &&
+            hasVariant($state, "size", "minimal"),
+          [sty.logincolor_clear]: hasVariant($state, "color", "clear"),
+          [sty.logincolor_clear_size_compact_shape_rounded]:
+            hasVariant($state, "size", "compact") &&
+            hasVariant($state, "shape", "rounded") &&
+            hasVariant($state, "color", "clear"),
+          [sty.logincolor_green]: hasVariant($state, "color", "green"),
+          [sty.logincolor_link]: hasVariant($state, "color", "link"),
+          [sty.logincolor_link_size_compact]:
+            hasVariant($state, "size", "compact") &&
+            hasVariant($state, "color", "link"),
+          [sty.logincolor_link_size_minimal]:
             hasVariant($state, "color", "link") &&
             hasVariant($state, "size", "minimal"),
-          [sty.rootcolor_red]: hasVariant($state, "color", "red"),
-          [sty.rootcolor_sand]: hasVariant($state, "color", "sand"),
-          [sty.rootcolor_softBlue]: hasVariant($state, "color", "softBlue"),
-          [sty.rootcolor_softGreen]: hasVariant($state, "color", "softGreen"),
-          [sty.rootcolor_softRed]: hasVariant($state, "color", "softRed"),
-          [sty.rootcolor_softSand]: hasVariant($state, "color", "softSand"),
-          [sty.rootcolor_softYellow]: hasVariant($state, "color", "softYellow"),
-          [sty.rootcolor_white]: hasVariant($state, "color", "white"),
-          [sty.rootcolor_yellow]: hasVariant($state, "color", "yellow"),
-          [sty.rootisDisabled]: hasVariant($state, "isDisabled", "isDisabled"),
-          [sty.rootshape_round]: hasVariant($state, "shape", "round"),
-          [sty.rootshape_rounded]: hasVariant($state, "shape", "rounded"),
-          [sty.rootshape_sharp]: hasVariant($state, "shape", "sharp"),
-          [sty.rootshowEndIcon]: hasVariant(
+          [sty.logincolor_red]: hasVariant($state, "color", "red"),
+          [sty.logincolor_sand]: hasVariant($state, "color", "sand"),
+          [sty.logincolor_sand_size_compact_shape_rounded]:
+            hasVariant($state, "size", "compact") &&
+            hasVariant($state, "shape", "rounded") &&
+            hasVariant($state, "color", "sand"),
+          [sty.logincolor_softBlue]: hasVariant($state, "color", "softBlue"),
+          [sty.logincolor_softGreen]: hasVariant($state, "color", "softGreen"),
+          [sty.logincolor_softRed]: hasVariant($state, "color", "softRed"),
+          [sty.logincolor_softSand]: hasVariant($state, "color", "softSand"),
+          [sty.logincolor_softYellow]: hasVariant(
+            $state,
+            "color",
+            "softYellow"
+          ),
+          [sty.logincolor_white]: hasVariant($state, "color", "white"),
+          [sty.logincolor_yellow]: hasVariant($state, "color", "yellow"),
+          [sty.loginisDisabled]: hasVariant($state, "isDisabled", "isDisabled"),
+          [sty.loginshape_round]: hasVariant($state, "shape", "round"),
+          [sty.loginshape_rounded]: hasVariant($state, "shape", "rounded"),
+          [sty.loginshape_sharp]: hasVariant($state, "shape", "sharp"),
+          [sty.loginshowEndIcon]: hasVariant(
             $state,
             "showEndIcon",
             "showEndIcon"
           ),
-          [sty.rootshowEndIcon_shape_rounded]:
+          [sty.loginshowEndIcon_shape_rounded]:
             hasVariant($state, "showEndIcon", "showEndIcon") &&
             hasVariant($state, "shape", "rounded"),
-          [sty.rootshowEndIcon_size_compact]:
+          [sty.loginshowEndIcon_size_compact]:
             hasVariant($state, "size", "compact") &&
             hasVariant($state, "showEndIcon", "showEndIcon"),
-          [sty.rootshowEndIcon_size_compact_showStartIcon]:
+          [sty.loginshowEndIcon_size_compact_showStartIcon]:
             hasVariant($state, "size", "compact") &&
             hasVariant($state, "showStartIcon", "showStartIcon") &&
             hasVariant($state, "showEndIcon", "showEndIcon"),
-          [sty.rootshowStartIcon]: hasVariant(
+          [sty.loginshowStartIcon]: hasVariant(
             $state,
             "showStartIcon",
             "showStartIcon"
           ),
-          [sty.rootshowStartIcon_shape_rounded]:
+          [sty.loginshowStartIcon_shape_rounded]:
             hasVariant($state, "shape", "rounded") &&
             hasVariant($state, "showStartIcon", "showStartIcon"),
-          [sty.rootsize_compact]: hasVariant($state, "size", "compact"),
-          [sty.rootsize_compact_shape_round]:
-            hasVariant($state, "shape", "round") &&
+          [sty.loginsize_compact]: hasVariant($state, "size", "compact"),
+          [sty.loginsize_compact_color_blue]:
+            hasVariant($state, "color", "blue") &&
             hasVariant($state, "size", "compact"),
-          [sty.rootsize_compact_shape_rounded]:
+          [sty.loginsize_compact_color_blue_shape_rounded]:
+            hasVariant($state, "color", "blue") &&
             hasVariant($state, "size", "compact") &&
             hasVariant($state, "shape", "rounded"),
-          [sty.rootsize_compact_showStartIcon]:
+          [sty.loginsize_compact_color_blue_shape_sharp]:
+            hasVariant($state, "color", "blue") &&
+            hasVariant($state, "size", "compact") &&
+            hasVariant($state, "shape", "sharp"),
+          [sty.loginsize_compact_color_red_shape_rounded]:
+            hasVariant($state, "size", "compact") &&
+            hasVariant($state, "shape", "rounded") &&
+            hasVariant($state, "color", "red"),
+          [sty.loginsize_compact_shape_round]:
+            hasVariant($state, "shape", "round") &&
+            hasVariant($state, "size", "compact"),
+          [sty.loginsize_compact_shape_rounded]:
+            hasVariant($state, "size", "compact") &&
+            hasVariant($state, "shape", "rounded"),
+          [sty.loginsize_compact_showStartIcon]:
             hasVariant($state, "size", "compact") &&
             hasVariant($state, "showStartIcon", "showStartIcon"),
-          [sty.rootsize_minimal]: hasVariant($state, "size", "minimal")
+          [sty.loginsize_minimal]: hasVariant($state, "size", "minimal")
         }
       )}
-      data-plasmic-trigger-props={[triggerRootFocusVisibleWithinProps]}
+      ref={ref => {
+        $refs["login"] = ref;
+      }}
+      data-plasmic-trigger-props={[triggerLoginFocusVisibleWithinProps]}
     >
       {(hasVariant($state, "showStartIcon", "showStartIcon") ? true : false) ? (
         <div
@@ -442,7 +481,7 @@ function PlasmicButton__RenderFunc(props: {
         data-plasmic-override={overrides.contentContainer}
         className={classNames(projectcss.all, sty.contentContainer, {
           [sty.contentContainer___focusVisibleWithin]:
-            triggers.focusVisibleWithin_root,
+            triggers.focusVisibleWithin_login,
           [sty.contentContainerisDisabled]: hasVariant(
             $state,
             "isDisabled",
@@ -465,7 +504,7 @@ function PlasmicButton__RenderFunc(props: {
           value: args.children,
           className: classNames(sty.slotTargetChildren, {
             [sty.slotTargetChildren___focusVisibleWithin]:
-              triggers.focusVisibleWithin_root,
+              triggers.focusVisibleWithin_login,
             [sty.slotTargetChildrencolor_blue]: hasVariant(
               $state,
               "color",
@@ -682,7 +721,12 @@ function useBehavior<P extends pp.PlumeButtonProps>(
 }
 
 const PlasmicDescendants = {
-  root: ["root", "startIconContainer", "contentContainer", "endIconContainer"],
+  login: [
+    "login",
+    "startIconContainer",
+    "contentContainer",
+    "endIconContainer"
+  ],
   startIconContainer: ["startIconContainer"],
   contentContainer: ["contentContainer"],
   endIconContainer: ["endIconContainer"]
@@ -691,7 +735,7 @@ type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
-  root: "button";
+  login: "button";
   startIconContainer: "div";
   contentContainer: "div";
   endIconContainer: "div";
@@ -744,7 +788,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       forNode: nodeName
     });
   };
-  if (nodeName === "root") {
+  if (nodeName === "login") {
     func.displayName = "PlasmicButton";
   } else {
     func.displayName = `PlasmicButton.${nodeName}`;
@@ -754,7 +798,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
 
 export const PlasmicButton = Object.assign(
   // Top-level PlasmicButton renders the root element
-  makeNodeComponent("root"),
+  makeNodeComponent("login"),
   {
     // Helper components rendering sub-elements
     startIconContainer: makeNodeComponent("startIconContainer"),
@@ -765,7 +809,10 @@ export const PlasmicButton = Object.assign(
     internalVariantProps: PlasmicButton__VariantProps,
     internalArgProps: PlasmicButton__ArgProps,
 
-    useBehavior
+    useBehavior,
+
+    // Key-value metadata
+    metadata: { abdu: "abdu" }
   }
 );
 

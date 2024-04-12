@@ -59,8 +59,12 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { NavigationBar } from "@plasmicpkgs/plasmic-nav";
-import Button from "../../Button"; // plasmic-import: j5o5xPWcHXxc/component
+import Navbar from "../../Navbar"; // plasmic-import: cAZ7Fyj9SuEu/component
+import SignInButtons from "../../SignInButtons"; // plasmic-import: PRwlDeJ3genv/component
+import { CmsQueryRepeater } from "@plasmicpkgs/plasmic-cms";
+import { CmsRowImage } from "@plasmicpkgs/plasmic-cms";
+import { CmsRowField } from "@plasmicpkgs/plasmic-cms";
+import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -68,9 +72,6 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css";
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: tCfLmaaHRZLhqCMNBDT3fx/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: 5h393F7B23DL/css
-
-import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: 3ii2Ka38u59S/icon
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: VUB87-ym8GeH/icon
 
 createPlasmicElementProxy;
 
@@ -85,11 +86,11 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
-  navigationBar?: Flex__<typeof NavigationBar>;
-  button?: Flex__<typeof Button>;
-  addvertisementSection?: Flex__<"div">;
-  advertisement?: Flex__<"div">;
-  freeBox?: Flex__<"div">;
+  navbar?: Flex__<typeof Navbar>;
+  signIn?: Flex__<"div">;
+  h4?: Flex__<"h4">;
+  h2?: Flex__<"h2">;
+  signInButtons?: Flex__<typeof SignInButtons>;
 };
 
 export interface DefaultHomepageProps {}
@@ -152,325 +153,457 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
-          <NavigationBar
-            data-plasmic-name={"navigationBar"}
-            data-plasmic-override={overrides.navigationBar}
-            brand={
-              <PlasmicLink__
+          <Navbar
+            data-plasmic-name={"navbar"}
+            data-plasmic-override={overrides.navbar}
+            className={classNames("__wab_instance", sty.navbar)}
+          />
+
+          <div className={classNames(projectcss.all, sty.freeBox__jd0Nj)}>
+            <div
+              data-plasmic-name={"signIn"}
+              data-plasmic-override={overrides.signIn}
+              className={classNames(projectcss.all, sty.signIn)}
+            >
+              <div
                 className={classNames(
                   projectcss.all,
-                  projectcss.a,
-                  sty.link__xnAuF
+                  projectcss.__wab_text,
+                  sty.text__icrRl
                 )}
-                component={Link}
-                href={"#"}
-                platform={"nextjs"}
               >
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__juf9M)}
-                  displayHeight={"50px"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"none"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"auto"}
-                  src={{
-                    src: "/plasmic/website_starter/images/screenshot20240407120359Png.png",
-                    fullWidth: 492,
-                    fullHeight: 158,
-                    aspectRatio: undefined
-                  }}
-                />
-              </PlasmicLink__>
-            }
-            className={classNames("__wab_instance", sty.navigationBar)}
-            closeButton={
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img___8Bzrw)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"none"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                src={"https://static1.plasmic.app/close.svg"}
-              />
-            }
-            forceOpenMenu={false}
-            itemsGap={8}
-            menuItems={
-              <React.Fragment>
-                <PlasmicLink__
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__isLor
-                  )}
-                  component={Link}
-                  href={"/"}
-                  platform={"nextjs"}
-                >
-                  {"Home"}
-                </PlasmicLink__>
-                <PlasmicLink__
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__cg7Af
-                  )}
-                  component={Link}
-                  href={"/"}
-                  platform={"nextjs"}
-                >
-                  {"Tribune"}
-                </PlasmicLink__>
-                <PlasmicLink__
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__t1Npl
-                  )}
-                  component={Link}
-                  href={"/"}
-                  platform={"nextjs"}
-                >
-                  {"Rates"}
-                </PlasmicLink__>
-                <PlasmicLink__
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__y2TG2
-                  )}
-                  component={Link}
-                  href={"/"}
-                  platform={"nextjs"}
-                >
-                  {"Soccer"}
-                </PlasmicLink__>
-                <PlasmicLink__
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__ffOUw
-                  )}
-                  component={Link}
-                  href={"/"}
-                  platform={"nextjs"}
-                >
-                  {"Figurine"}
-                </PlasmicLink__>
-                <PlasmicLink__
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__bT24O
-                  )}
-                  component={Link}
-                  href={"/"}
-                  platform={"nextjs"}
-                >
-                  {"Hockey"}
-                </PlasmicLink__>
-                <PlasmicLink__
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__xSbuA
-                  )}
-                  component={Link}
-                  href={"/"}
-                  platform={"nextjs"}
-                >
-                  {"Basket"}
-                </PlasmicLink__>
-                <PlasmicLink__
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link___09Ise
-                  )}
-                  component={Link}
-                  href={"/"}
-                  platform={"nextjs"}
-                >
-                  {"Tennis"}
-                </PlasmicLink__>
-                <PlasmicLink__
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__jjfNc
-                  )}
-                  component={Link}
-                  href={"/"}
-                  platform={"nextjs"}
-                >
-                  {"Boxing"}
-                </PlasmicLink__>
-                <PlasmicLink__
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__eRr6A
-                  )}
-                  component={Link}
-                  href={"/"}
-                  platform={"nextjs"}
-                >
-                  {"Auto"}
-                </PlasmicLink__>
-                <PlasmicLink__
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link___7G3Dv
-                  )}
-                  component={Link}
-                  href={"/"}
-                  platform={"nextjs"}
-                >
-                  {"Skying"}
-                </PlasmicLink__>
-              </React.Fragment>
-            }
-            openButton={
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__viAuq)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"none"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                src={"https://static1.plasmic.app/menu.svg"}
-              />
-            }
-            responsiveBreakpoint={768}
-          />
-
-          <Button
-            data-plasmic-name={"button"}
-            data-plasmic-override={overrides.button}
-            children={null}
-            className={classNames("__wab_instance", sty.button)}
-          />
-
-          <div
-            data-plasmic-name={"addvertisementSection"}
-            data-plasmic-override={overrides.addvertisementSection}
-            className={classNames(projectcss.all, sty.addvertisementSection)}
-          >
-            <Stack__
-              as={"div"}
-              data-plasmic-name={"advertisement"}
-              data-plasmic-override={overrides.advertisement}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.advertisement)}
-            >
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.column__tnWm)}
+                <React.Fragment>
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <h4
+                      data-plasmic-name={"h4"}
+                      data-plasmic-override={overrides.h4}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h4,
+                        projectcss.__wab_text,
+                        sty.h4
+                      )}
+                    >
+                      {"Play the only"}
+                    </h4>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                </React.Fragment>
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__rS2Sd
+                )}
               >
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__vPrd)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"auto"}
-                  loading={"lazy"}
-                  src={
-                    "https://avatars.mds.yandex.net/get-direct/4969662/atSTCY6D3ztHy6JHaDdvIQ/x450"
+                <React.Fragment>
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <h3
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h3,
+                        projectcss.__wab_text,
+                        sty.h3___0LWm
+                      )}
+                    >
+                      <React.Fragment>
+                        <React.Fragment>{""}</React.Fragment>
+                        {
+                          <h2
+                            data-plasmic-name={"h2"}
+                            data-plasmic-override={overrides.h2}
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.h2,
+                              projectcss.__wab_text,
+                              sty.h2
+                            )}
+                          >
+                            <React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ color: "var(--token-jgohepLVeKvh)" }}
+                              >
+                                {"LALIALIGA"}
+                              </span>
+                              <React.Fragment> </React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ color: "#FF4844" }}
+                              >
+                                {"FANTASY"}
+                              </span>
+                              <React.Fragment>{"\n "}</React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ color: "var(--token-jgohepLVeKvh)" }}
+                              >
+                                {"game"}
+                              </span>
+                            </React.Fragment>
+                          </h2>
+                        }
+                        <React.Fragment>{""}</React.Fragment>
+                      </React.Fragment>
+                    </h3>
                   }
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__nnB1T
-                  )}
-                >
-                  {"Free design courses all free on 14 days\n"}
-                </div>
-              </Stack__>
-              <div className={classNames(projectcss.all, sty.column__ja5Cd)}>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__wN3Ym)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"auto"}
-                  loading={"lazy"}
-                  src={
-                    "https://avatars.mds.yandex.net/get-direct/5223389/Rgh5dDelcte3FYC6EUMVAQ/x450"
-                  }
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__fjCqZ
-                  )}
-                >
-                  {"Enter some text"}
-                </div>
+                  <React.Fragment>{""}</React.Fragment>
+                </React.Fragment>
               </div>
-              <div className={classNames(projectcss.all, sty.column___4Kde3)}>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__oKEq1)}
-                  displayHeight={"60.78%"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"95%"}
-                  displayMinWidth={"0"}
-                  displayWidth={"361px"}
-                  loading={"lazy"}
-                  src={
-                    "https://avatars.mds.yandex.net/get-direct/169435/1udPZoXGtZbrRrj20aaSyw/wy300"
-                  }
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__dcTuO
-                  )}
-                >
-                  {"Enter some text"}
-                </div>
-              </div>
-            </Stack__>
+              <SignInButtons
+                data-plasmic-name={"signInButtons"}
+                data-plasmic-override={overrides.signInButtons}
+                className={classNames("__wab_instance", sty.signInButtons)}
+              />
+            </div>
           </div>
-          <div
-            data-plasmic-name={"freeBox"}
-            data-plasmic-override={overrides.freeBox}
-            className={classNames(projectcss.all, sty.freeBox)}
-          />
+          <div className={classNames(projectcss.all, sty.freeBox__wqT1A)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__cSwL
+              )}
+            >
+              <React.Fragment>
+                <React.Fragment>{""}</React.Fragment>
+                {
+                  <h3
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h3,
+                      projectcss.__wab_text,
+                      sty.h3__smrsM
+                    )}
+                  >
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ color: "var(--token-jgohepLVeKvh)" }}
+                      >
+                        {"Breaking News"}
+                      </span>
+                      <React.Fragment> </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ color: "#FF4844" }}
+                      >
+                        {"Fantasy"}
+                      </span>
+                    </React.Fragment>
+                  </h3>
+                }
+                <React.Fragment>{""}</React.Fragment>
+              </React.Fragment>
+            </div>
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__ut1ZB)}>
+            <div className={classNames(projectcss.all, sty.freeBox___14Y3N)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__ijLop
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <h3
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h3,
+                        projectcss.__wab_text,
+                        sty.h3__esAer
+                      )}
+                    >
+                      <React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ color: "var(--token-jgohepLVeKvh)" }}
+                        >
+                          {"Latest News"}
+                        </span>
+                      </React.Fragment>
+                    </h3>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                </React.Fragment>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__getwh)}>
+                <CmsQueryRepeater
+                  className={classNames(
+                    "__wab_instance",
+                    sty.cmsDataFetcher__nnQ4
+                  )}
+                  desc={false}
+                  emptyMessage={
+                    <DataCtxReader__>
+                      {$ctx => (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__usFf6
+                          )}
+                        >
+                          {"No matching published entries found."}
+                        </div>
+                      )}
+                    </DataCtxReader__>
+                  }
+                  fields={["title", "description", "img"]}
+                  filterField={"title"}
+                  forceEmptyState={false}
+                  forceLoadingState={false}
+                  limit={0}
+                  loadingMessage={
+                    <DataCtxReader__>
+                      {$ctx => (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__vsOWo
+                          )}
+                        >
+                          {"Loading..."}
+                        </div>
+                      )}
+                    </DataCtxReader__>
+                  }
+                  noAutoRepeat={false}
+                  noLayout={true}
+                  useDraft={false}
+                >
+                  <DataCtxReader__>
+                    {$ctx => (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox___79O5Z
+                        )}
+                      >
+                        <CmsRowImage
+                          className={classNames(
+                            "__wab_instance",
+                            sty.cmsEntryImage__bhb3J
+                          )}
+                          srcProp={"src"}
+                        >
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__jt6Zp)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"none"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"100%"}
+                            height={"120px"}
+                            src={
+                              "https://studio.plasmic.app/static/img/placeholder-full.png"
+                            }
+                            width={"120px"}
+                          />
+
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__vhVpj
+                            )}
+                          >
+                            <CmsRowField
+                              className={classNames(
+                                "__wab_instance",
+                                sty.cmsEntryField___9BYdg
+                              )}
+                              themeResetClassName={classNames(
+                                projectcss.root_reset,
+                                projectcss.root_reset_tags,
+                                projectcss.plasmic_default_styles,
+                                projectcss.plasmic_mixins,
+                                projectcss.plasmic_tokens,
+                                plasmic_antd_5_hostless_css.plasmic_tokens,
+                                plasmic_plasmic_rich_components_css.plasmic_tokens
+                              )}
+                            />
+
+                            <CmsRowField
+                              className={classNames(
+                                "__wab_instance",
+                                sty.cmsEntryField__hcTm3
+                              )}
+                              field={"description"}
+                              themeResetClassName={classNames(
+                                projectcss.root_reset,
+                                projectcss.root_reset_tags,
+                                projectcss.plasmic_default_styles,
+                                projectcss.plasmic_mixins,
+                                projectcss.plasmic_tokens,
+                                plasmic_antd_5_hostless_css.plasmic_tokens,
+                                plasmic_plasmic_rich_components_css.plasmic_tokens
+                              )}
+                              usePlasmicTheme={false}
+                            />
+                          </div>
+                        </CmsRowImage>
+                      </div>
+                    )}
+                  </DataCtxReader__>
+                </CmsQueryRepeater>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox___7Vn6L)}>
+                <CmsQueryRepeater
+                  className={classNames(
+                    "__wab_instance",
+                    sty.cmsDataFetcher__aay1H
+                  )}
+                  desc={false}
+                  emptyMessage={
+                    <DataCtxReader__>
+                      {$ctx => (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__o6Hq
+                          )}
+                        >
+                          {"No matching published entries found."}
+                        </div>
+                      )}
+                    </DataCtxReader__>
+                  }
+                  fields={["description", "title", "img"]}
+                  forceEmptyState={false}
+                  forceLoadingState={false}
+                  limit={0}
+                  loadingMessage={
+                    <DataCtxReader__>
+                      {$ctx => (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__dPdpy
+                          )}
+                        >
+                          {"Loading..."}
+                        </div>
+                      )}
+                    </DataCtxReader__>
+                  }
+                  noAutoRepeat={false}
+                  noLayout={false}
+                  table={"breakingNewsMini"}
+                  useDraft={false}
+                >
+                  <DataCtxReader__>
+                    {$ctx => (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__wUu9V
+                        )}
+                      >
+                        <CmsRowImage
+                          className={classNames(
+                            "__wab_instance",
+                            sty.cmsEntryImage__dn6R2
+                          )}
+                          srcProp={"src"}
+                        >
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__aJynm)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"none"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"200px"}
+                            src={
+                              "https://studio.plasmic.app/static/img/placeholder-full.png"
+                            }
+                            width={"120px"}
+                          />
+
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__gWoRb
+                            )}
+                          >
+                            <CmsRowField
+                              className={classNames(
+                                "__wab_instance",
+                                sty.cmsEntryField__qqNnm
+                              )}
+                              themeResetClassName={classNames(
+                                projectcss.root_reset,
+                                projectcss.root_reset_tags,
+                                projectcss.plasmic_default_styles,
+                                projectcss.plasmic_mixins,
+                                projectcss.plasmic_tokens,
+                                plasmic_antd_5_hostless_css.plasmic_tokens,
+                                plasmic_plasmic_rich_components_css.plasmic_tokens
+                              )}
+                            />
+
+                            <CmsRowField
+                              className={classNames(
+                                "__wab_instance",
+                                sty.cmsEntryField__juZmX
+                              )}
+                              field={"description"}
+                              themeResetClassName={classNames(
+                                projectcss.root_reset,
+                                projectcss.root_reset_tags,
+                                projectcss.plasmic_default_styles,
+                                projectcss.plasmic_mixins,
+                                projectcss.plasmic_tokens,
+                                plasmic_antd_5_hostless_css.plasmic_tokens,
+                                plasmic_plasmic_rich_components_css.plasmic_tokens
+                              )}
+                            />
+                          </div>
+                        </CmsRowImage>
+                      </div>
+                    )}
+                  </DataCtxReader__>
+                </CmsQueryRepeater>
+              </div>
+            </div>
+            <h3
+              className={classNames(
+                projectcss.all,
+                projectcss.h3,
+                projectcss.__wab_text,
+                sty.h3___3OCph
+              )}
+            >
+              <React.Fragment>
+                <span
+                  className={"plasmic_default__all plasmic_default__span"}
+                  style={{ color: "var(--token-jgohepLVeKvh)" }}
+                >
+                  {"Matches Calendar"}
+                </span>
+              </React.Fragment>
+            </h3>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -478,30 +611,23 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "navigationBar",
-    "button",
-    "addvertisementSection",
-    "advertisement",
-    "freeBox"
-  ],
-  navigationBar: ["navigationBar"],
-  button: ["button"],
-  addvertisementSection: ["addvertisementSection", "advertisement"],
-  advertisement: ["advertisement"],
-  freeBox: ["freeBox"]
+  root: ["root", "navbar", "signIn", "h4", "h2", "signInButtons"],
+  navbar: ["navbar"],
+  signIn: ["signIn", "h4", "h2", "signInButtons"],
+  h4: ["h4"],
+  h2: ["h2"],
+  signInButtons: ["signInButtons"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  navigationBar: typeof NavigationBar;
-  button: typeof Button;
-  addvertisementSection: "div";
-  advertisement: "div";
-  freeBox: "div";
+  navbar: typeof Navbar;
+  signIn: "div";
+  h4: "h4";
+  h2: "h2";
+  signInButtons: typeof SignInButtons;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -564,11 +690,11 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    navigationBar: makeNodeComponent("navigationBar"),
-    button: makeNodeComponent("button"),
-    addvertisementSection: makeNodeComponent("addvertisementSection"),
-    advertisement: makeNodeComponent("advertisement"),
-    freeBox: makeNodeComponent("freeBox"),
+    navbar: makeNodeComponent("navbar"),
+    signIn: makeNodeComponent("signIn"),
+    h4: makeNodeComponent("h4"),
+    h2: makeNodeComponent("h2"),
+    signInButtons: makeNodeComponent("signInButtons"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
