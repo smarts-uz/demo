@@ -1,6 +1,26 @@
 {
   "props": [
     {
+      "name": "Facebook",
+      "type": "color",
+      "value": "#4267B2",
+      "category": "color",
+      "meta": {
+        "projectId": "tCfLmaaHRZLhqCMNBDT3fx",
+        "id": "kr7h-FgyE6wN"
+      }
+    },
+    {
+      "name": "LoginBack",
+      "type": "color",
+      "value": "#11111F",
+      "category": "color",
+      "meta": {
+        "projectId": "tCfLmaaHRZLhqCMNBDT3fx",
+        "id": "iY-G3zIs-ZCD"
+      }
+    },
+    {
       "name": "System: Bg Container",
       "type": "color",
       "value": "var(--antd-colorBgContainer)",

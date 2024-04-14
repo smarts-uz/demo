@@ -156,6 +156,46 @@
           "cssFilePath": "plasmic/proliga_test_app/PlasmicSignInButtons.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "iQWzdfVeOLvv",
+          "name": "LoginRegister",
+          "type": "managed",
+          "projectId": "tCfLmaaHRZLhqCMNBDT3fx",
+          "renderModuleFilePath": "plasmic/proliga_test_app/PlasmicLoginRegister.tsx",
+          "importSpec": {
+            "modulePath": "LoginRegister.tsx"
+          },
+          "cssFilePath": "plasmic/proliga_test_app/PlasmicLoginRegister.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "6FyT6GrCqrhw",
+          "name": "TextInput",
+          "type": "managed",
+          "projectId": "tCfLmaaHRZLhqCMNBDT3fx",
+          "renderModuleFilePath": "plasmic/proliga_test_app/PlasmicTextInput.tsx",
+          "importSpec": {
+            "modulePath": "TextInput.tsx"
+          },
+          "cssFilePath": "plasmic/proliga_test_app/PlasmicTextInput.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "text-input"
+        },
+        {
+          "id": "QoZM5zX7KRbO",
+          "name": "Clubs",
+          "type": "managed",
+          "projectId": "tCfLmaaHRZLhqCMNBDT3fx",
+          "renderModuleFilePath": "plasmic/proliga_test_app/PlasmicClubs.tsx",
+          "importSpec": {
+            "modulePath": "Clubs.tsx"
+          },
+          "cssFilePath": "plasmic/proliga_test_app/PlasmicClubs.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -168,6 +208,11 @@
           "id": "VUB87-ym8GeH",
           "name": "IconIcon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon.tsx"
+        },
+        {
+          "id": "LkVsG8OxtLr6",
+          "name": "SearchsvgIcon",
+          "moduleFilePath": "plasmic/proliga_test_app/icons/PlasmicIcon__Searchsvg.tsx"
         }
       ],
       "images": [
@@ -205,6 +250,36 @@
           "id": "sjaCyxlUtyPy",
           "name": "images (1).jfif",
           "filePath": "../public/plasmic/proliga_test_app/images/images1Jfif.jpg"
+        },
+        {
+          "id": "pS0-bxPskdmF",
+          "name": "sm_5aff6081b74c8.jpg",
+          "filePath": "../public/plasmic/proliga_test_app/images/sm5Aff6081B74C8Jpg.jpg"
+        },
+        {
+          "id": "tr9IRtf2Drz5",
+          "name": "555.webp",
+          "filePath": "../public/plasmic/proliga_test_app/images/_555Webp.webp"
+        },
+        {
+          "id": "JdxYJHCxL1Qk",
+          "name": "facebook-logo-circle-transparent.png",
+          "filePath": "../public/plasmic/proliga_test_app/images/facebookLogoCircleTransparentpng.png"
+        },
+        {
+          "id": "vWuqP0NGmuk3",
+          "name": "754_facebook_icon.jpg",
+          "filePath": "../public/plasmic/proliga_test_app/images/_754FacebookIconjpg.jpg"
+        },
+        {
+          "id": "C9D9EIIBX3eN",
+          "name": "Google__G__logo.svg.png",
+          "filePath": "../public/plasmic/proliga_test_app/images/googleGLogosvgpng.png"
+        },
+        {
+          "id": "NOgIS-kmPNXd",
+          "name": "images.png",
+          "filePath": "../public/plasmic/proliga_test_app/images/imagespng.png"
         }
       ],
       "indirect": false,
@@ -754,7 +829,8 @@
           "componentImportPath": "@plasmicpkgs/plasmic-cms"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "22U3ZXm4dE59qEW488gxzU",
@@ -788,7 +864,8 @@
           "componentImportPath": "@plasmicpkgs/plasmic-graphcms"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "caTPwKxj5ZrD9LQ7DMdK4Z",
@@ -846,7 +923,8 @@
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "28Ba3BDvRe7EiWdfFNnLB6",
@@ -1056,7 +1134,8 @@
           "componentImportPath": "@plasmicpkgs/antd/skinny/registerTable"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "58GpZjZCWTaJ8AUhpCwt2K",
@@ -1078,7 +1157,8 @@
           "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "YUiM7yqBWAqsh8KSnrdj7",
@@ -1106,7 +1186,8 @@
           "componentImportPath": "@plasmicpkgs/plasmic-query"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     }
   ],
   "globalVariants": {

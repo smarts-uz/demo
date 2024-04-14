@@ -3,6 +3,10 @@
 .plasmic_tokens {
   --token-sD_lxm9xiWSg: #7b7b8c;
   --plasmic-token-text: var(--token-sD_lxm9xiWSg);
+  --token-iY-G3zIs-ZCD: #11111f;
+  --plasmic-token-login-back: var(--token-iY-G3zIs-ZCD);
+  --token-kr7h-FgyE6wN: #4267b2;
+  --plasmic-token-facebook: var(--token-kr7h-FgyE6wN);
 }
 
 .plasmic_tokens {

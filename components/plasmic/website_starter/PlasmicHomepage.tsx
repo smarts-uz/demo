@@ -60,11 +60,13 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import Navbar from "../../Navbar"; // plasmic-import: cAZ7Fyj9SuEu/component
+import Clubs from "../../Clubs"; // plasmic-import: QoZM5zX7KRbO/component
 import SignInButtons from "../../SignInButtons"; // plasmic-import: PRwlDeJ3genv/component
 import { CmsQueryRepeater } from "@plasmicpkgs/plasmic-cms";
 import { CmsRowImage } from "@plasmicpkgs/plasmic-cms";
 import { CmsRowField } from "@plasmicpkgs/plasmic-cms";
-import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
+
+import { useScreenVariants as useScreenVariantsdXwyGmjSdG } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: -d_XWYGmjSdG/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -87,10 +89,15 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
   navbar?: Flex__<typeof Navbar>;
+  clubs?: Flex__<typeof Clubs>;
+  heroSection?: Flex__<"div">;
   signIn?: Flex__<"div">;
   h4?: Flex__<"h4">;
   h2?: Flex__<"h2">;
   signInButtons?: Flex__<typeof SignInButtons>;
+  breakingNews?: Flex__<"div">;
+  breakingNewsSection?: Flex__<"div">;
+  news?: Flex__<"div">;
 };
 
 export interface DefaultHomepageProps {}
@@ -126,6 +133,10 @@ function PlasmicHomepage__RenderFunc(props: {
 
   const currentUser = useCurrentUser?.() || {};
 
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariantsdXwyGmjSdG()
+  });
+
   return (
     <React.Fragment>
       <Head></Head>
@@ -159,7 +170,17 @@ function PlasmicHomepage__RenderFunc(props: {
             className={classNames("__wab_instance", sty.navbar)}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox__jd0Nj)}>
+          <Clubs
+            data-plasmic-name={"clubs"}
+            data-plasmic-override={overrides.clubs}
+            className={classNames("__wab_instance", sty.clubs)}
+          />
+
+          <div
+            data-plasmic-name={"heroSection"}
+            data-plasmic-override={overrides.heroSection}
+            className={classNames(projectcss.all, sty.heroSection)}
+          >
             <div
               data-plasmic-name={"signIn"}
               data-plasmic-override={overrides.signIn}
@@ -266,7 +287,11 @@ function PlasmicHomepage__RenderFunc(props: {
               />
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__wqT1A)}>
+          <div
+            data-plasmic-name={"breakingNews"}
+            data-plasmic-override={overrides.breakingNews}
+            className={classNames(projectcss.all, sty.breakingNews)}
+          >
             <div
               className={classNames(
                 projectcss.all,
@@ -306,8 +331,16 @@ function PlasmicHomepage__RenderFunc(props: {
               </React.Fragment>
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__ut1ZB)}>
-            <div className={classNames(projectcss.all, sty.freeBox___14Y3N)}>
+          <div
+            data-plasmic-name={"breakingNewsSection"}
+            data-plasmic-override={overrides.breakingNewsSection}
+            className={classNames(projectcss.all, sty.breakingNewsSection)}
+          >
+            <div
+              data-plasmic-name={"news"}
+              data-plasmic-override={overrides.news}
+              className={classNames(projectcss.all, sty.news)}
+            >
               <div
                 className={classNames(
                   projectcss.all,
@@ -533,11 +566,19 @@ function PlasmicHomepage__RenderFunc(props: {
                             displayMaxWidth={"none"}
                             displayMinHeight={"0"}
                             displayMinWidth={"0"}
-                            displayWidth={"200px"}
+                            displayWidth={
+                              hasVariant(globalVariants, "screen", "mobileOnly")
+                                ? "180px"
+                                : "200px"
+                            }
                             src={
                               "https://studio.plasmic.app/static/img/placeholder-full.png"
                             }
-                            width={"120px"}
+                            width={
+                              hasVariant(globalVariants, "screen", "mobileOnly")
+                                ? ``
+                                : "120px"
+                            }
                           />
 
                           <div
@@ -586,23 +627,25 @@ function PlasmicHomepage__RenderFunc(props: {
                 </CmsQueryRepeater>
               </div>
             </div>
-            <h3
-              className={classNames(
-                projectcss.all,
-                projectcss.h3,
-                projectcss.__wab_text,
-                sty.h3___3OCph
-              )}
-            >
-              <React.Fragment>
-                <span
-                  className={"plasmic_default__all plasmic_default__span"}
-                  style={{ color: "var(--token-jgohepLVeKvh)" }}
-                >
-                  {"Matches Calendar"}
-                </span>
-              </React.Fragment>
-            </h3>
+            <div className={classNames(projectcss.all, sty.freeBox__zVdDa)}>
+              <h3
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h3,
+                  projectcss.__wab_text,
+                  sty.h3___3OCph
+                )}
+              >
+                <React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "var(--token-jgohepLVeKvh)" }}
+                  >
+                    {"Matches Calendar"}
+                  </span>
+                </React.Fragment>
+              </h3>
+            </div>
           </div>
         </div>
       </div>
@@ -611,12 +654,29 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "navbar", "signIn", "h4", "h2", "signInButtons"],
+  root: [
+    "root",
+    "navbar",
+    "clubs",
+    "heroSection",
+    "signIn",
+    "h4",
+    "h2",
+    "signInButtons",
+    "breakingNews",
+    "breakingNewsSection",
+    "news"
+  ],
   navbar: ["navbar"],
+  clubs: ["clubs"],
+  heroSection: ["heroSection", "signIn", "h4", "h2", "signInButtons"],
   signIn: ["signIn", "h4", "h2", "signInButtons"],
   h4: ["h4"],
   h2: ["h2"],
-  signInButtons: ["signInButtons"]
+  signInButtons: ["signInButtons"],
+  breakingNews: ["breakingNews"],
+  breakingNewsSection: ["breakingNewsSection", "news"],
+  news: ["news"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -624,10 +684,15 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   navbar: typeof Navbar;
+  clubs: typeof Clubs;
+  heroSection: "div";
   signIn: "div";
   h4: "h4";
   h2: "h2";
   signInButtons: typeof SignInButtons;
+  breakingNews: "div";
+  breakingNewsSection: "div";
+  news: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -691,10 +756,15 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     navbar: makeNodeComponent("navbar"),
+    clubs: makeNodeComponent("clubs"),
+    heroSection: makeNodeComponent("heroSection"),
     signIn: makeNodeComponent("signIn"),
     h4: makeNodeComponent("h4"),
     h2: makeNodeComponent("h2"),
     signInButtons: makeNodeComponent("signInButtons"),
+    breakingNews: makeNodeComponent("breakingNews"),
+    breakingNewsSection: makeNodeComponent("breakingNewsSection"),
+    news: makeNodeComponent("news"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

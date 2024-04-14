@@ -25,6 +25,17 @@
 .login > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
   margin-left: 8px;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .login {
+    border-color: var(--token-iY-G3zIs-ZCD);
+  }
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .login > :global(.__wab_flex-container) {
+    justify-content: center;
+    align-items: center;
+  }
+}
 .loginshowStartIcon {
   padding-left: 16px;
 }
@@ -102,49 +113,6 @@
 .loginsize_compact_shape_round {
   padding: 6px;
 }
-.login:hover {
-  background: #dfdfd8;
-  border-color: #000000;
-}
-.logincolor_blue:hover {
-  background: #369eff;
-}
-.logincolor_green:hover {
-  background: #3cb179;
-}
-.logincolor_yellow:hover {
-  background: #ffef5c;
-}
-.logincolor_red:hover {
-  background: #ec5e41;
-}
-.logincolor_sand:hover {
-  background: #7f7e77;
-}
-.logincolor_white:hover {
-  background: #ffef5c;
-}
-.logincolor_softBlue:hover {
-  background: #e1f0ff;
-}
-.logincolor_softGreen:hover {
-  background: #ddf3e4;
-}
-.logincolor_softYellow:hover {
-  background: #fff8bb;
-}
-.logincolor_softRed:hover {
-  background: #ffe6e2;
-}
-.logincolor_softSand:hover {
-  background: #e9e9e6;
-}
-.logincolor_clear:hover {
-  background: #e9e9e6;
-}
-.logincolor_link:hover {
-  background: #ffffff00;
-}
 .login:focus-within {
   box-shadow: 0px 0px 0px 3px #96c7f2;
   outline: none;
@@ -197,11 +165,11 @@
   background: #ffffff00;
 }
 .startIconContainer {
-  display: flex;
   position: relative;
   flex-direction: row;
   align-items: stretch;
   justify-content: flex-start;
+  display: none;
 }
 .startIconContainershowStartIcon {
   display: flex;
@@ -235,9 +203,6 @@
 }
 .slotTargetStartIconcolor_link {
   color: #0091ff;
-}
-.logincolor_link:hover .slotTargetStartIconcolor_link {
-  color: #0081f1;
 }
 .logincolor_link:active .slotTargetStartIconcolor_link {
   color: #0081f1;
@@ -301,63 +266,6 @@
 }
 .slotTargetChildrencolor_link {
   color: #0091ff;
-}
-.logincolor_link:hover .slotTargetChildrencolor_link {
-  color: #0081f1;
-}
-.logincolor_link:hover .slotTargetChildrencolor_link > :global(.__wab_text),
-.logincolor_link:hover
-  .slotTargetChildrencolor_link
-  > :global(.__wab_expr_html_text),
-.logincolor_link:hover
-  .slotTargetChildrencolor_link
-  > :global(.__wab_slot-string-wrapper),
-.logincolor_link:hover
-  .slotTargetChildrencolor_link
-  > :global(.__wab_slot)
-  > :global(.__wab_text),
-.logincolor_link:hover
-  .slotTargetChildrencolor_link
-  > :global(.__wab_slot)
-  > :global(.__wab_expr_html_text),
-.logincolor_link:hover
-  .slotTargetChildrencolor_link
-  > :global(.__wab_slot)
-  > :global(.__wab_slot-string-wrapper),
-.logincolor_link:hover
-  .slotTargetChildrencolor_link
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > :global(.__wab_text),
-.logincolor_link:hover
-  .slotTargetChildrencolor_link
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > :global(.__wab_expr_html_text),
-.logincolor_link:hover
-  .slotTargetChildrencolor_link
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > :global(.__wab_slot-string-wrapper),
-.logincolor_link:hover
-  .slotTargetChildrencolor_link
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > :global(.__wab_text),
-.logincolor_link:hover
-  .slotTargetChildrencolor_link
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > :global(.__wab_expr_html_text),
-.logincolor_link:hover
-  .slotTargetChildrencolor_link
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > :global(.__wab_slot-string-wrapper) {
-  text-decoration-line: underline;
 }
 .login:focus-within .slotTargetChildren > *,
 .login:focus-within .slotTargetChildren > :global(.__wab_slot) > *,
@@ -519,9 +427,6 @@
 }
 .slotTargetEndIconcolor_link {
   color: #0091ff;
-}
-.logincolor_link:hover .slotTargetEndIconcolor_link {
-  color: #0081f1;
 }
 .logincolor_link:active .slotTargetEndIconcolor_link {
   color: #0081f1;

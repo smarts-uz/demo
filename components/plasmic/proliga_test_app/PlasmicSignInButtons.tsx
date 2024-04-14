@@ -64,6 +64,8 @@ import { GraphCMSFetcher } from "@plasmicpkgs/plasmic-graphcms";
 import { GraphCMSField } from "@plasmicpkgs/plasmic-graphcms";
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
+import { useScreenVariants as useScreenVariantsdXwyGmjSdG } from "../website_starter/PlasmicGlobalVariant__Screen"; // plasmic-import: -d_XWYGmjSdG/globalVariant
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
@@ -143,6 +145,10 @@ function PlasmicSignInButtons__RenderFunc(props: {
     $ctx,
     $queries: {},
     $refs
+  });
+
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariantsdXwyGmjSdG()
   });
 
   return (
