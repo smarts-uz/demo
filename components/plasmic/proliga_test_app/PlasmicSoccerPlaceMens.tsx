@@ -59,6 +59,8 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import IdealTeamMember from "../../IdealTeamMember"; // plasmic-import: mXqSFIZO8qjj/component
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
@@ -133,7 +135,70 @@ function PlasmicSoccerPlaceMens__RenderFunc(props: {
         plasmic_plasmic_rich_components_css.plasmic_tokens,
         sty.root
       )}
-    />
+    >
+      <div className={classNames(projectcss.all, sty.freeBox___1XVdq)}>
+        <IdealTeamMember
+          className={classNames("__wab_instance", sty.idealTeamMember__zBzS)}
+        />
+      </div>
+      <Stack__
+        as={"div"}
+        hasGap={true}
+        className={classNames(projectcss.all, sty.freeBox___5Q4Is)}
+      >
+        <IdealTeamMember
+          className={classNames("__wab_instance", sty.idealTeamMember__ux2Vc)}
+          sergioRamos={true}
+        />
+
+        <IdealTeamMember
+          className={classNames("__wab_instance", sty.idealTeamMember__dlu4O)}
+          johnPache2={true}
+        />
+
+        <IdealTeamMember
+          className={classNames("__wab_instance", sty.idealTeamMember__lZkYs)}
+          mingueza={true}
+        />
+      </Stack__>
+      <div className={classNames(projectcss.all, sty.freeBox___1Yq3H)}>
+        <IdealTeamMember
+          className={classNames("__wab_instance", sty.idealTeamMember__exJLv)}
+          zakaryan={true}
+        />
+
+        <IdealTeamMember
+          className={classNames("__wab_instance", sty.idealTeamMember__oarUs)}
+          ikerMundez={true}
+        />
+
+        <IdealTeamMember
+          className={classNames("__wab_instance", sty.idealTeamMember__yTKux)}
+          robertNav={true}
+        />
+
+        <IdealTeamMember
+          alcaraz={true}
+          className={classNames("__wab_instance", sty.idealTeamMember__gMvcF)}
+        />
+      </div>
+      <div className={classNames(projectcss.all, sty.freeBox__qyM9Z)}>
+        <IdealTeamMember
+          className={classNames("__wab_instance", sty.idealTeamMember__fX6K)}
+          rodrygo={true}
+        />
+
+        <IdealTeamMember
+          className={classNames("__wab_instance", sty.idealTeamMember__cUMhQ)}
+          dovbyk={true}
+        />
+
+        <IdealTeamMember
+          className={classNames("__wab_instance", sty.idealTeamMember__uccX)}
+          willianJose={true}
+        />
+      </div>
+    </div>
   ) as React.ReactElement | null;
 }
 
