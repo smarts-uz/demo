@@ -304,6 +304,32 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/matches"
+        },
+        {
+          "id": "9JecvK77shao",
+          "name": "SoccerPlaceMens",
+          "type": "managed",
+          "projectId": "tCfLmaaHRZLhqCMNBDT3fx",
+          "renderModuleFilePath": "plasmic/proliga_test_app/PlasmicSoccerPlaceMens.tsx",
+          "importSpec": {
+            "modulePath": "SoccerPlaceMens.tsx"
+          },
+          "cssFilePath": "plasmic/proliga_test_app/PlasmicSoccerPlaceMens.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "mXqSFIZO8qjj",
+          "name": "IdealTeamMember",
+          "type": "managed",
+          "projectId": "tCfLmaaHRZLhqCMNBDT3fx",
+          "renderModuleFilePath": "plasmic/proliga_test_app/PlasmicIdealTeamMember.tsx",
+          "importSpec": {
+            "modulePath": "IdealTeamMember.tsx"
+          },
+          "cssFilePath": "plasmic/proliga_test_app/PlasmicIdealTeamMember.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -413,6 +439,11 @@
           "id": "HbetoN8j61_s",
           "name": "x-social-media-white-icon.png",
           "filePath": "../public/plasmic/proliga_test_app/images/xSocialMediaWhiteIconpng.png"
+        },
+        {
+          "id": "NYxI8wwcypqv",
+          "name": "soccer place.jpg",
+          "filePath": "../public/plasmic/proliga_test_app/images/soccerPlacejpg.jpg"
         }
       ],
       "indirect": false,
