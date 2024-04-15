@@ -11,6 +11,16 @@
       }
     },
     {
+      "name": "Footer Back",
+      "type": "color",
+      "value": "#11111F",
+      "category": "color",
+      "meta": {
+        "projectId": "tCfLmaaHRZLhqCMNBDT3fx",
+        "id": "deUOqHKwNHwK"
+      }
+    },
+    {
       "name": "LoginBack",
       "type": "color",
       "value": "#11111F",

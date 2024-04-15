@@ -125,6 +125,24 @@ function PlasmicNavbar__RenderFunc(props: {
 
   const currentUser = useCurrentUser?.() || {};
 
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "variable",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsdXwyGmjSdG()
   });
@@ -156,27 +174,37 @@ function PlasmicNavbar__RenderFunc(props: {
           hasGap={true}
           className={classNames(projectcss.all, sty.freeBox__spnp)}
         >
-          <PlasmicImg__
-            alt={""}
-            className={classNames(sty.img__oE1Nb)}
-            displayHeight={"40px"}
-            displayMaxHeight={"none"}
-            displayMaxWidth={"none"}
-            displayMinHeight={"0"}
-            displayMinWidth={"0"}
-            displayWidth={
-              hasVariant(globalVariants, "screen", "mobileOnly")
-                ? "80px"
-                : "120px"
-            }
-            src={{
-              src: "/plasmic/proliga_test_app/images/logoFantasyDarkBgpng.png",
-              fullWidth: 143,
-              fullHeight: 18,
-              aspectRatio: undefined
-            }}
-          />
-
+          <PlasmicLink__
+            className={classNames(
+              projectcss.all,
+              projectcss.a,
+              sty.link__uagj1
+            )}
+            component={Link}
+            href={`/`}
+            platform={"nextjs"}
+          >
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__oE1Nb)}
+              displayHeight={"40px"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"none"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={
+                hasVariant(globalVariants, "screen", "mobileOnly")
+                  ? "80px"
+                  : "120px"
+              }
+              src={{
+                src: "/plasmic/proliga_test_app/images/logoFantasyDarkBgpng.png",
+                fullWidth: 143,
+                fullHeight: 18,
+                aspectRatio: undefined
+              }}
+            />
+          </PlasmicLink__>
           <Stack__
             as={"div"}
             hasGap={true}
@@ -189,21 +217,26 @@ function PlasmicNavbar__RenderFunc(props: {
                 sty.link__vlUuL
               )}
               component={Link}
+              href={`/rankings`}
               platform={"nextjs"}
             >
-              {(() => {
-                try {
-                  return true;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return true;
-                  }
-                  throw e;
-                }
-              })() ? (
+              {(
+                hasVariant(globalVariants, "screen", "portrait")
+                  ? true
+                  : (() => {
+                      try {
+                        return true;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })()
+              ) ? (
                 <Button
                   className={classNames("__wab_instance", sty.button__qTcOs)}
                   endIcon={
@@ -239,6 +272,7 @@ function PlasmicNavbar__RenderFunc(props: {
                 sty.link__hlPzz
               )}
               component={Link}
+              href={`/matches`}
               platform={"nextjs"}
             >
               <Button
@@ -533,6 +567,7 @@ function PlasmicNavbar__RenderFunc(props: {
               sty.link___4Sa73
             )}
             component={Link}
+            href={`/create-account`}
             platform={"nextjs"}
           >
             <LoginButton2

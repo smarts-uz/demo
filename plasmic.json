@@ -196,6 +196,114 @@
           "cssFilePath": "plasmic/proliga_test_app/PlasmicClubs.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "3IeFdVpZSxeY",
+          "name": "Register",
+          "type": "managed",
+          "projectId": "tCfLmaaHRZLhqCMNBDT3fx",
+          "renderModuleFilePath": "plasmic/proliga_test_app/PlasmicRegister.tsx",
+          "importSpec": {
+            "modulePath": "../pages/create-account.tsx"
+          },
+          "cssFilePath": "plasmic/proliga_test_app/PlasmicRegister.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/create-account"
+        },
+        {
+          "id": "FvqZ6jZ3Nmz6",
+          "name": "MatchesCalendar",
+          "type": "managed",
+          "projectId": "tCfLmaaHRZLhqCMNBDT3fx",
+          "renderModuleFilePath": "plasmic/proliga_test_app/PlasmicMatchesCalendar.tsx",
+          "importSpec": {
+            "modulePath": "MatchesCalendar.tsx"
+          },
+          "cssFilePath": "plasmic/proliga_test_app/PlasmicMatchesCalendar.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "RmOl_nf2lHTZ",
+          "name": "SearchComponent",
+          "type": "managed",
+          "projectId": "tCfLmaaHRZLhqCMNBDT3fx",
+          "renderModuleFilePath": "plasmic/proliga_test_app/PlasmicSearchComponent.tsx",
+          "importSpec": {
+            "modulePath": "SearchComponent.tsx"
+          },
+          "cssFilePath": "plasmic/proliga_test_app/PlasmicSearchComponent.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "cIO7uK2fZGwJ",
+          "name": "Rankings",
+          "type": "managed",
+          "projectId": "tCfLmaaHRZLhqCMNBDT3fx",
+          "renderModuleFilePath": "plasmic/proliga_test_app/PlasmicRankings.tsx",
+          "importSpec": {
+            "modulePath": "../pages/rankings.tsx"
+          },
+          "cssFilePath": "plasmic/proliga_test_app/PlasmicRankings.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/rankings"
+        },
+        {
+          "id": "b4VJUmcvygSD",
+          "name": "Rankings2",
+          "type": "managed",
+          "projectId": "tCfLmaaHRZLhqCMNBDT3fx",
+          "renderModuleFilePath": "plasmic/proliga_test_app/PlasmicRankings2.tsx",
+          "importSpec": {
+            "modulePath": "Rankings2.tsx"
+          },
+          "cssFilePath": "plasmic/proliga_test_app/PlasmicRankings2.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "4djvdSKsk3cL",
+          "name": "Login",
+          "type": "managed",
+          "projectId": "tCfLmaaHRZLhqCMNBDT3fx",
+          "renderModuleFilePath": "plasmic/proliga_test_app/PlasmicLogin.tsx",
+          "importSpec": {
+            "modulePath": "../pages/login.tsx"
+          },
+          "cssFilePath": "plasmic/proliga_test_app/PlasmicLogin.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/login"
+        },
+        {
+          "id": "cx6aWNqCuwPL",
+          "name": "Footer",
+          "type": "managed",
+          "projectId": "tCfLmaaHRZLhqCMNBDT3fx",
+          "renderModuleFilePath": "plasmic/proliga_test_app/PlasmicFooter.tsx",
+          "importSpec": {
+            "modulePath": "Footer.tsx"
+          },
+          "cssFilePath": "plasmic/proliga_test_app/PlasmicFooter.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "uS-s5NCMFolB",
+          "name": "Matches",
+          "type": "managed",
+          "projectId": "tCfLmaaHRZLhqCMNBDT3fx",
+          "renderModuleFilePath": "plasmic/proliga_test_app/PlasmicMatches.tsx",
+          "importSpec": {
+            "modulePath": "../pages/matches.tsx"
+          },
+          "cssFilePath": "plasmic/proliga_test_app/PlasmicMatches.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/matches"
         }
       ],
       "icons": [
@@ -280,6 +388,31 @@
           "id": "NOgIS-kmPNXd",
           "name": "images.png",
           "filePath": "../public/plasmic/proliga_test_app/images/imagespng.png"
+        },
+        {
+          "id": "kvaEtrmz25Al",
+          "name": "Real-Betis.png",
+          "filePath": "../public/plasmic/proliga_test_app/images/realBetispng.png"
+        },
+        {
+          "id": "AtTX-UfuayAf",
+          "name": "p1678_t186_1_001_000.png",
+          "filePath": "../public/plasmic/proliga_test_app/images/p1678T1861001000Png.png"
+        },
+        {
+          "id": "B6bdJJOIXVwm",
+          "name": "empty_state_no_results.webp",
+          "filePath": "../public/plasmic/proliga_test_app/images/emptyStateNoResultswebp.webp"
+        },
+        {
+          "id": "6fuZdeWjcOhq",
+          "name": "X_logo_2023_original.svg",
+          "filePath": "../public/plasmic/proliga_test_app/images/xLogo2023Originalsvg.svg"
+        },
+        {
+          "id": "HbetoN8j61_s",
+          "name": "x-social-media-white-icon.png",
+          "filePath": "../public/plasmic/proliga_test_app/images/xSocialMediaWhiteIconpng.png"
         }
       ],
       "indirect": false,
@@ -1197,6 +1330,12 @@
         "name": "Screen",
         "projectId": "tCfLmaaHRZLhqCMNBDT3fx",
         "contextFilePath": "plasmic/website_starter/PlasmicGlobalVariant__Screen.tsx"
+      },
+      {
+        "id": "ulv2F16-QUQD",
+        "name": "UnnamedGlobalGroupOfVariants",
+        "projectId": "tCfLmaaHRZLhqCMNBDT3fx",
+        "contextFilePath": "plasmic/proliga_test_app/PlasmicGlobalVariant__UnnamedGlobalGroupOfVariants.tsx"
       }
     ]
   },

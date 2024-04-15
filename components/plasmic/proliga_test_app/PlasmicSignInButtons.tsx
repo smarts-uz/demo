@@ -90,6 +90,7 @@ export const PlasmicSignInButtons__ArgProps = new Array<ArgPropType>();
 export type PlasmicSignInButtons__OverridesType = {
   root?: Flex__<"div">;
   h6?: Flex__<"h6">;
+  link?: Flex__<"a"> & Partial<LinkProps>;
   hygraphFetcher?: Flex__<typeof GraphCMSFetcher>;
   hygraphField?: Flex__<typeof GraphCMSField>;
 };
@@ -255,17 +256,27 @@ function PlasmicSignInButtons__RenderFunc(props: {
               </React.Fragment>
             </div>
           </Button>
-          <Button className={classNames("__wab_instance", sty.button__a0ZFc)}>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__jxdh3
-              )}
-            >
-              {"Login"}
-            </div>
-          </Button>
+          <PlasmicLink__
+            data-plasmic-name={"link"}
+            data-plasmic-override={overrides.link}
+            className={classNames(projectcss.all, projectcss.a, sty.link)}
+            component={Link}
+            href={`/create-account`}
+            platform={"nextjs"}
+            target={"_blank"}
+          >
+            <Button className={classNames("__wab_instance", sty.button__a0ZFc)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__jxdh3
+                )}
+              >
+                {"Login"}
+              </div>
+            </Button>
+          </PlasmicLink__>
         </Stack__>
       </div>
       <div className={classNames(projectcss.all, sty.freeBox___3Yq5R)}>
@@ -323,8 +334,9 @@ function PlasmicSignInButtons__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "h6", "hygraphFetcher", "hygraphField"],
+  root: ["root", "h6", "link", "hygraphFetcher", "hygraphField"],
   h6: ["h6"],
+  link: ["link"],
   hygraphFetcher: ["hygraphFetcher", "hygraphField"],
   hygraphField: ["hygraphField"]
 } as const;
@@ -334,6 +346,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   h6: "h6";
+  link: "a";
   hygraphFetcher: typeof GraphCMSFetcher;
   hygraphField: typeof GraphCMSField;
 };
@@ -399,6 +412,7 @@ export const PlasmicSignInButtons = Object.assign(
   {
     // Helper components rendering sub-elements
     h6: makeNodeComponent("h6"),
+    link: makeNodeComponent("link"),
     hygraphFetcher: makeNodeComponent("hygraphFetcher"),
     hygraphField: makeNodeComponent("hygraphField"),
 

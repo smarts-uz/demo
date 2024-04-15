@@ -62,9 +62,12 @@ import {
 import Navbar from "../../Navbar"; // plasmic-import: cAZ7Fyj9SuEu/component
 import Clubs from "../../Clubs"; // plasmic-import: QoZM5zX7KRbO/component
 import SignInButtons from "../../SignInButtons"; // plasmic-import: PRwlDeJ3genv/component
+import SearchComponent from "../../SearchComponent"; // plasmic-import: RmOl_nf2lHTZ/component
 import { CmsQueryRepeater } from "@plasmicpkgs/plasmic-cms";
 import { CmsRowImage } from "@plasmicpkgs/plasmic-cms";
 import { CmsRowField } from "@plasmicpkgs/plasmic-cms";
+import MatchesCalendar from "../../MatchesCalendar"; // plasmic-import: FvqZ6jZ3Nmz6/component
+import Footer from "../../Footer"; // plasmic-import: cx6aWNqCuwPL/component
 
 import { useScreenVariants as useScreenVariantsdXwyGmjSdG } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: -d_XWYGmjSdG/globalVariant
 
@@ -95,9 +98,13 @@ export type PlasmicHomepage__OverridesType = {
   h4?: Flex__<"h4">;
   h2?: Flex__<"h2">;
   signInButtons?: Flex__<typeof SignInButtons>;
+  searchComponent?: Flex__<typeof SearchComponent>;
   breakingNews?: Flex__<"div">;
   breakingNewsSection?: Flex__<"div">;
   news?: Flex__<"div">;
+  matchesCalendar?: Flex__<typeof MatchesCalendar>;
+  columns?: Flex__<"div">;
+  footer?: Flex__<typeof Footer>;
 };
 
 export interface DefaultHomepageProps {}
@@ -287,6 +294,12 @@ function PlasmicHomepage__RenderFunc(props: {
               />
             </div>
           </div>
+          <SearchComponent
+            data-plasmic-name={"searchComponent"}
+            data-plasmic-override={overrides.searchComponent}
+            className={classNames("__wab_instance", sty.searchComponent)}
+          />
+
           <div
             data-plasmic-name={"breakingNews"}
             data-plasmic-override={overrides.breakingNews}
@@ -569,6 +582,12 @@ function PlasmicHomepage__RenderFunc(props: {
                             displayWidth={
                               hasVariant(globalVariants, "screen", "mobileOnly")
                                 ? "180px"
+                                : hasVariant(
+                                    globalVariants,
+                                    "screen",
+                                    "portrait"
+                                  )
+                                ? "100%"
                                 : "200px"
                             }
                             src={
@@ -627,7 +646,11 @@ function PlasmicHomepage__RenderFunc(props: {
                 </CmsQueryRepeater>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__zVdDa)}>
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__zVdDa)}
+            >
               <h3
                 className={classNames(
                   projectcss.all,
@@ -645,8 +668,74 @@ function PlasmicHomepage__RenderFunc(props: {
                   </span>
                 </React.Fragment>
               </h3>
+              <MatchesCalendar
+                data-plasmic-name={"matchesCalendar"}
+                data-plasmic-override={overrides.matchesCalendar}
+                className={classNames("__wab_instance", sty.matchesCalendar)}
+              />
+            </Stack__>
+          </div>
+          <div
+            data-plasmic-name={"columns"}
+            data-plasmic-override={overrides.columns}
+            className={classNames(projectcss.all, sty.columns)}
+          >
+            <div className={classNames(projectcss.all, sty.column__yPNc3)}>
+              <PlasmicLink__
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  projectcss.__wab_text,
+                  sty.link__tkH
+                )}
+                component={Link}
+                href={"https://www.plasmic.app/"}
+                platform={"nextjs"}
+              >
+                {"See all the news"}
+              </PlasmicLink__>
+            </div>
+            <div className={classNames(projectcss.all, sty.column__nqRy2)}>
+              <PlasmicLink__
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  projectcss.__wab_text,
+                  sty.link__veAid
+                )}
+                component={Link}
+                href={"https://www.plasmic.app/"}
+                platform={"nextjs"}
+              >
+                {"All matches"}
+              </PlasmicLink__>
             </div>
           </div>
+          <div className={classNames(projectcss.all, sty.freeBox___00Hh)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__wkUte
+              )}
+            >
+              {"Stats"}
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__pa5Qv
+              )}
+            >
+              {"Fantasy"}
+            </div>
+          </div>
+          <Footer
+            data-plasmic-name={"footer"}
+            data-plasmic-override={overrides.footer}
+            className={classNames("__wab_instance", sty.footer)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -663,9 +752,13 @@ const PlasmicDescendants = {
     "h4",
     "h2",
     "signInButtons",
+    "searchComponent",
     "breakingNews",
     "breakingNewsSection",
-    "news"
+    "news",
+    "matchesCalendar",
+    "columns",
+    "footer"
   ],
   navbar: ["navbar"],
   clubs: ["clubs"],
@@ -674,9 +767,13 @@ const PlasmicDescendants = {
   h4: ["h4"],
   h2: ["h2"],
   signInButtons: ["signInButtons"],
+  searchComponent: ["searchComponent"],
   breakingNews: ["breakingNews"],
-  breakingNewsSection: ["breakingNewsSection", "news"],
-  news: ["news"]
+  breakingNewsSection: ["breakingNewsSection", "news", "matchesCalendar"],
+  news: ["news"],
+  matchesCalendar: ["matchesCalendar"],
+  columns: ["columns"],
+  footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -690,9 +787,13 @@ type NodeDefaultElementType = {
   h4: "h4";
   h2: "h2";
   signInButtons: typeof SignInButtons;
+  searchComponent: typeof SearchComponent;
   breakingNews: "div";
   breakingNewsSection: "div";
   news: "div";
+  matchesCalendar: typeof MatchesCalendar;
+  columns: "div";
+  footer: typeof Footer;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -762,9 +863,13 @@ export const PlasmicHomepage = Object.assign(
     h4: makeNodeComponent("h4"),
     h2: makeNodeComponent("h2"),
     signInButtons: makeNodeComponent("signInButtons"),
+    searchComponent: makeNodeComponent("searchComponent"),
     breakingNews: makeNodeComponent("breakingNews"),
     breakingNewsSection: makeNodeComponent("breakingNewsSection"),
     news: makeNodeComponent("news"),
+    matchesCalendar: makeNodeComponent("matchesCalendar"),
+    columns: makeNodeComponent("columns"),
+    footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
